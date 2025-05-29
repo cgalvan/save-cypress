@@ -69,7 +69,7 @@ function App() {
         </header>
 
         <section className="grid md:grid-cols-3 gap-6">
-          <Card className="bg-blue-50">
+          <Card className="bg-blue-50 card">
             <CardContent className="p-6 text-center">
               <Mail className="mx-auto mb-4 h-10 w-10 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">
@@ -85,27 +85,7 @@ function App() {
             </CardContent>
           </Card>
 
-          <Card className="bg-blue-50">
-            <CardContent className="p-6 text-center">
-              <Users className="mx-auto mb-4 h-10 w-10 text-blue-600" />
-              <h2 className="text-xl font-semibold mb-2">
-                Join the PTA Facebook Group
-              </h2>
-              <p className="mb-4">
-                Stay informed with the latest updates on how you can help.
-              </p>
-              <Button asChild>
-                <a
-                  href="https://www.facebook.com/share/1JRkThGK6k/?mibextid=wwXIfr"
-                  target="_blank"
-                >
-                  Join the Group
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-blue-50">
+          <Card className="bg-blue-50 card">
             <CardContent className="p-6 text-center">
               <Megaphone className="mx-auto mb-4 h-10 w-10 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">Spread the Word</h2>
@@ -113,17 +93,35 @@ function App() {
                 Share our message on social media, talk to neighbors, and rally
                 support.
               </p>
-              <Button asChild>
-                <a href="https://twitter.com/intent/tweet?text=Support%20our%20school%20by%20choosing%20Path%203%21%20%23SaveOurSchool">
-                  Share on Twitter
-                </a>
-              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-blue-50 card">
+            <CardContent className="p-6 text-center">
+              <Users className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+              <h2 className="text-xl font-semibold mb-2">About Us</h2>
+              <p className="mb-4">
+                Save Cypress is a community-led effort committed to protecting
+                Cypress Elementary School, a cornerstone of our neighborhood. We
+                believe that every child deserves the stability, resources, and
+                connections that only a thriving local school can provide. Our
+                goal is to bring families, educators, and community members
+                together to advocate for the future of Cypress, ensuring it
+                remains a safe and welcoming place where children can grow,
+                learn, and belong. By working together, we can ensure that
+                Cypress continues to serve as the heart of our community for
+                generations to come.
+              </p>
+              <i className="mb-4">
+                Save Cypress is not affiliated with the Cypress Elementary
+                School PTA or administration.
+              </i>
             </CardContent>
           </Card>
         </section>
 
         <footer className="text-center text-sm text-gray-500 mt-10">
-          © {new Date().getFullYear()} Save Our School Committee
+          © {new Date().getFullYear()} Save Cypress
         </footer>
       </div>
     </>
