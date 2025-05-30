@@ -5,7 +5,7 @@ import "./App.css";
 
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-import { Mail, Users, Megaphone } from "lucide-react";
+import { CalendarDays, Mail, Users, Megaphone } from "lucide-react";
 
 const emailAddresses: string[] = [
   "bruce.gearing@leanderisd.org",
@@ -90,7 +90,7 @@ function App() {
         </header>
 
         <section className="grid md:grid-cols-3 gap-6">
-          <Card className="bg-blue-50 card">
+          <Card className="bg-blue-50">
             <CardContent className="p-6 text-center">
               <Mail className="mx-auto mb-4 h-10 w-10 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">
@@ -106,7 +106,25 @@ function App() {
             </CardContent>
           </Card>
 
-          <Card className="bg-blue-50 card">
+          <Card className="bg-blue-50">
+            <CardContent className="p-6 text-center">
+              <Users className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+              <h2 className="text-xl font-semibold mb-2">
+                Join the Community Group
+              </h2>
+              <p className="mb-4">
+                Stay informed and participate in meetings, rallies, and planning
+                sessions.
+              </p>
+              <Button asChild>
+                <a href="" target="_blank">
+                  Join the Group (TBD)
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-blue-50">
             <CardContent className="p-6 text-center">
               <Megaphone className="mx-auto mb-4 h-10 w-10 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">Spread the Word</h2>
@@ -116,12 +134,56 @@ function App() {
               </p>
             </CardContent>
           </Card>
+        </section>
 
-          <Card className="bg-blue-50 card">
+        <section className="mt-12">
+          <Card className="bg-blue-100">
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                <CalendarDays className="h-6 w-6 text-blue-700 mr-2" />
+                <h2 className="text-2xl font-bold text-blue-700">
+                  Next School Board Meeting
+                </h2>
+              </div>
+              <div className="pl-4 border-l-4 border-blue-400 ml-4 text-gray-800">
+                <p>
+                  <strong>LISD Board Meeting</strong>
+                </p>
+                <p>Thursday, June 5th</p>
+                <p>6:15pm (Doors open at 5:30pm)</p>
+                <p>CPMS Library</p>
+                <p>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500"
+                  >
+                    Sign up to speak
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://meetings.boardbook.org/Public/Agenda/795?meeting=686178"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500"
+                  >
+                    Agenda
+                  </a>
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="mt-12">
+          <Card className="bg-neutral-light">
             <CardContent className="p-6 text-center">
-              <Users className="mx-auto mb-4 h-10 w-10 text-blue-600" />
-              <h2 className="text-xl font-semibold mb-2">About Us</h2>
-              <p className="mb-4">
+              <h2 className="text-2xl font-bold text-blue-700 mb-4">
+                About Us
+              </h2>
+              <p className="text-gray-800 max-w-2xl mx-auto">
                 Save Cypress is a community-led effort committed to protecting
                 Cypress Elementary School, a cornerstone of our neighborhood. We
                 believe that every child deserves the stability, resources, and
@@ -133,10 +195,12 @@ function App() {
                 Cypress continues to serve as the heart of our community for
                 generations to come.
               </p>
-              <i className="mb-4">
-                Save Cypress is not affiliated with the Cypress Elementary
-                School PTA or administration.
-              </i>
+              <p className="text-gray-800 max-w-2xl mx-auto">
+                <i>
+                  Save Cypress is not affiliated with the Cypress Elementary
+                  School PTA or administration.
+                </i>
+              </p>
             </CardContent>
           </Card>
         </section>
