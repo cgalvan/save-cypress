@@ -19,16 +19,35 @@ const emailAddresses: string[] = [
   "francesca.romans@leanderisd.org",
   "anna.smith@leanderisd.org",
   "governance.team@leanderisd.org",
-  "laurelyn.arterbury@leanderisd.org",
   "sarah.grissom@leanderisd.org",
-  "john.graham@leanderisd.org",
   "shawn.swisher@leanderisd.org",
-  "matt.bentz@leanderisd.org",
   "crestina.hardie@leanderisd.org",
-  "jimmy.disler@leanderisd.org",
   "pete.pape@leanderisd.org",
   "angela.hodges@leanderisd.org",
 ];
+
+const emailSubjects: string[] = [
+  "Keep Cypress Open: Preserve Our Community's Future",
+  "Defend Cypress: A School Worth Saving",
+  "Protect Cypress Elementary: A Pillar of Our Community",
+  "Save Cypress School: A Vital Educational Resource",
+  "Cypress Deserves a Future: Reconsider the Closure",
+  "Keep Cypress Elementary Thriving: Say No to Closure",
+  "Don't Close Cypress: Support Our Students and Families",
+  "Closing Cypress is a Mistake: Preserve Our School",
+  "Let's Stand Together to Keep Cypress Open",
+  "Closing Cypress Harms Our Community: Let's Find a Better Way",
+  "Preserve Cypress Elementary: A High-Impact School for Students",
+  "Reconsider the Plan: Keep Cypress Open for Our Community",
+  "Save Cypress School: A Community's Lifeline",
+  "A United Voice for Cypress: Say No to Closure",
+  "Don't Let Cypress Close: Support Our School's Future",
+];
+
+const getRandomSubject = (): string => {
+  const index = Math.floor(Math.random() * emailSubjects.length);
+  return emailSubjects[index];
+};
 
 const emailTemplate = `Dear Members of the LISD Board,
 
@@ -48,7 +67,9 @@ Sincerely,
 `;
 const mailToLink = `mailto:${emailAddresses.join(
   ","
-)}?subject=Choose%20Path%203&body=${encodeURIComponent(emailTemplate)}`;
+)}?subject=${encodeURIComponent(getRandomSubject())}&body=${encodeURIComponent(
+  emailTemplate
+)}`;
 function App() {
   return (
     <>
