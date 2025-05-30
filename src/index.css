@@ -16,3 +16,7 @@ h4 {
 a {
   @apply text-white hover:text-white transition;
 }
+
+.keen-slider {
+  transition: height 0.5s ease;
+}
