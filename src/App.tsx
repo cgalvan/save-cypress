@@ -1,11 +1,10 @@
-//import { useState } from "react";
-//import reactLogo from "./assets/react.svg";
-//import viteLogo from "/vite.svg";
 import "./App.css";
 
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { CalendarDays, Mail, Users, Megaphone } from "lucide-react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 const emailAddresses: string[] = [
   "bruce.gearing@leanderisd.org",
@@ -70,7 +69,40 @@ const mailToLink = `mailto:${emailAddresses.join(
 )}?subject=${encodeURIComponent(getRandomSubject())}&body=${encodeURIComponent(
   emailTemplate
 )}`;
+
+// Images from board meetings, rallies, etc...
+const photos = [
+  "/images/IMG_5797.JPEG",
+  "/images/IMG_1028.jpg",
+  "/images/IMG_1030.jpg",
+  "/images/IMG_1032.jpg",
+  "/images/IMG_1035.jpg",
+  "/images/IMG_1037.jpg",
+  "/images/IMG_1039.jpg",
+  "/images/IMG_1041.jpg",
+  "/images/IMG_1027.jpg",
+  "/images/IMG_1029.jpg",
+  "/images/IMG_1031.jpg",
+  "/images/IMG_1034.jpg",
+  "/images/IMG_1036.jpg",
+  "/images/IMG_1038.jpg",
+  "/images/IMG_1040.jpg",
+  "/images/IMG_1042.jpg",
+];
+
 function App() {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 10,
+    },
+    created: (slider) => {
+      setInterval(() => {
+        slider.next();
+      }, 3000);
+    },
+  });
   return (
     <>
       <div className="min-h-screen bg-white text-gray-800 p-6 md:p-12">
@@ -172,6 +204,25 @@ function App() {
                     Agenda
                   </a>
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="mt-12">
+          <Card className="bg-neutral-light">
+            <CardContent className="p-6 text-center">
+              <h2 className="text-2xl font-bold text-blue-700 mb-4">Gallery</h2>
+              <div ref={sliderRef} className="keen-slider">
+                {photos.map((src, index) => (
+                  <div key={index} className="keen-slider__slide">
+                    <img
+                      src={src}
+                      alt={`Gallery image ${index + 1}`}
+                      className="rounded-lg shadow-md mx-auto"
+                    />
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
