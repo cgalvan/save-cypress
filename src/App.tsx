@@ -175,11 +175,30 @@ function App() {
                 Stay informed and participate in meetings, rallies, and planning
                 sessions.
               </p>
-              <Button asChild>
-                <a href="" target="_blank">
-                  Join the Group (TBD)
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://www.facebook.com/share/1LGMSUc8BV/?mibextid=wwXlfr"
+                  target="_blank"
+                  className="text-blue-700 hover:text-blue-500 flex items-center"
+                >
+                  <img
+                    src="/icons/Facebook_Logo_Primary.png"
+                    alt="Facebook"
+                    className="h-5 w-5 mr-1"
+                  />
                 </a>
-              </Button>
+                <a
+                  href="https://www.instagram.com/cypresselempta"
+                  target="_blank"
+                  className="text-pink-600 hover:text-pink-400 flex items-center"
+                >
+                  <img
+                    src="/icons/Instagram_Glyph_Gradient.svg"
+                    alt="Instagram"
+                    className="h-5 w-5 mr-1"
+                  />
+                </a>
+              </div>
             </CardContent>
           </Card>
 
