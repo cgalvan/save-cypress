@@ -2,7 +2,13 @@ import "./App.css";
 
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-import { CalendarDays, Mail, Users, Megaphone } from "lucide-react";
+import {
+  CalendarDays,
+  ClipboardEdit,
+  Mail,
+  Users,
+  Megaphone,
+} from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -124,6 +130,27 @@ function App() {
         <section className="grid md:grid-cols-3 gap-6">
           <Card className="bg-blue-50">
             <CardContent className="p-6 text-center">
+              <ClipboardEdit className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+              <h2 className="text-xl font-semibold mb-2">
+                ThoughtExchange Survey
+              </h2>
+              <p className="mb-4">
+                Please complete this survey ASAP to voice your thoughts and
+                concern. This survey closes EOD Friday, June 13th.
+              </p>
+              <Button asChild>
+                <a
+                  href="https://my.thoughtexchange.com/scroll/591428530/welcome"
+                  target="_blank"
+                >
+                  Complete Survey
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-blue-50">
+            <CardContent className="p-6 text-center">
               <Mail className="mx-auto mb-4 h-10 w-10 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">
                 Email the School Board
@@ -174,36 +201,46 @@ function App() {
               <div className="flex items-center mb-4">
                 <CalendarDays className="h-6 w-6 text-blue-700 mr-2" />
                 <h2 className="text-2xl font-bold text-blue-700">
-                  Next School Board Meeting
+                  Upcoming Dates
                 </h2>
               </div>
-              <div className="pl-4 border-l-4 border-blue-400 ml-4 text-gray-800">
-                <p>
-                  <strong>LISD Board Meeting</strong>
-                </p>
-                <p>Thursday, June 5th</p>
-                <p>6:15pm (Doors open at 5:30pm)</p>
-                <p>CPMS Library</p>
-                <p>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-700 underline hover:text-blue-500"
-                  >
-                    Sign up to speak
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="https://meetings.boardbook.org/Public/Agenda/795?meeting=686178"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-700 underline hover:text-blue-500"
-                  >
-                    Agenda
-                  </a>
-                </p>
+              <div className="pl-4 border-l-4 border-blue-400 ml-4 text-gray-800 space-y-5">
+                <div>
+                  <p>
+                    <strong>LISD Board Meeting</strong>
+                  </p>
+                  <p>Thursday, June 5th</p>
+                  <p>6:15pm (Doors open at 5:30pm)</p>
+                  <p>CPMS Library</p>
+                  <p>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700 underline hover:text-blue-500"
+                    >
+                      Sign up to speak (closes 12pm 6/5)
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="https://meetings.boardbook.org/Public/Agenda/795?meeting=686178"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700 underline hover:text-blue-500"
+                    >
+                      Agenda
+                    </a>
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>LISD Board Meeting</strong>
+                  </p>
+                  <p>Thursday, June 19th</p>
+                  <p>6:15pm (Doors open at 5:30pm)</p>
+                  <p>CPMS Library</p>
+                </div>
               </div>
             </CardContent>
           </Card>
