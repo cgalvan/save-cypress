@@ -5,6 +5,7 @@ import { Button } from "./components/ui/button";
 import {
   CalendarDays,
   ClipboardEdit,
+  Files,
   Mail,
   Users,
   Megaphone,
@@ -94,6 +95,14 @@ const photos = [
   "/images/IMG_1038.jpg",
   "/images/IMG_1040.jpg",
   "/images/IMG_1042.jpg",
+  "/images/IMG_9491.jpg",
+  "/images/IMG_1840.JPEG",
+  "/images/IMG_1841.JPEG",
+  "/images/IMG_1842.JPEG",
+  "/images/IMG_1844.JPEG",
+  "/images/IMG_1845.JPEG",
+  "/images/IMG_1846.JPEG",
+  "/images/IMG_1847.JPEG",
 ];
 
 function App() {
@@ -136,7 +145,8 @@ function App() {
               </h2>
               <p className="mb-4">
                 Please complete this survey ASAP to voice your thoughts and
-                concern. This survey closes EOD Friday, June 13th.
+                concern. Mention Cypress by name. This survey closes EOD Friday,
+                June 13th.
               </p>
               <Button asChild>
                 <a
@@ -184,7 +194,7 @@ function App() {
                   <img
                     src="/icons/Facebook_Logo_Primary.png"
                     alt="Facebook"
-                    className="h-5 w-5 mr-1"
+                    className="h-10 w-10 mr-5"
                   />
                 </a>
                 <a
@@ -195,7 +205,7 @@ function App() {
                   <img
                     src="/icons/Instagram_Glyph_Gradient.svg"
                     alt="Instagram"
-                    className="h-5 w-5 mr-1"
+                    className="h-10 w-10 mr-5"
                   />
                 </a>
               </div>
@@ -210,6 +220,25 @@ function App() {
                 Share our message on social media, talk to neighbors, and rally
                 support.
               </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-blue-50">
+            <CardContent className="p-6 text-center">
+              <Files className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+              <h2 className="text-xl font-semibold mb-2">District Proposal</h2>
+              <p className="mb-4">
+                These are the long-range paths proposed by the district on May
+                29th, 2025
+              </p>
+              <Button asChild>
+                <a
+                  href="https://drive.google.com/file/d/1ph85i4pAZ7lAlE-F1SElR1YHIjj0SrKb/view"
+                  target="_blank"
+                >
+                  Open Slides
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </section>
