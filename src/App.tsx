@@ -134,6 +134,7 @@ function App() {
     },
   });
 
+  // Show a top banner whenever a board meeting stream is live
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -319,37 +320,12 @@ function App() {
                     <p>
                       <strong>LISD Board Meeting</strong>
                     </p>
-                    <p>Thursday, June 5th</p>
-                    <p>6:15pm (Doors open at 5:30pm)</p>
-                    <p>CPMS Library</p>
-                    <p>
-                      <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 underline hover:text-blue-500"
-                      >
-                        Sign up to speak (closes 12pm 6/5)
-                      </a>
-                    </p>
-                    <p>
-                      <a
-                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=686178"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 underline hover:text-blue-500"
-                      >
-                        Agenda
-                      </a>
-                    </p>
-                  </div>
-                  <div>
-                    <p>
-                      <strong>LISD Board Meeting</strong>
-                    </p>
                     <p>Thursday, June 19th</p>
                     <p>6:15pm (Doors open at 5:30pm)</p>
                     <p>CPMS Library</p>
+                    <p>
+                      <i>Sign-up link to speak will be posted once available</i>
+                    </p>
                   </div>
                 </div>
               </CardContent>
