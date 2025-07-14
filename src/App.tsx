@@ -5,7 +5,6 @@ import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import {
   CalendarDays,
-  ClipboardEdit,
   Files,
   //Lightbulb,
   Mail,
@@ -142,8 +141,8 @@ function App() {
       const now = new Date();
 
       // Update this for any future board meetings
-      const meetingStart = new Date("2025-06-19T18:10:00-05:00"); // 6/19, 6:10pm CST
-      const meetingEnd = new Date("2025-06-20T02:00:00-05:00"); // 6/20, 2:00am CST
+      const meetingStart = new Date("2025-07-17T18:10:00-05:00"); // 7/17, 6:10pm CST
+      const meetingEnd = new Date("2025-07-18T02:00:00-05:00"); // 7/18, 2:00am CST
 
       setShowBanner(now >= meetingStart && now <= meetingEnd);
     };
@@ -185,28 +184,6 @@ function App() {
           </header>
 
           <section className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-blue-50">
-              <CardContent className="p-6 text-center">
-                <ClipboardEdit className="mx-auto mb-4 h-10 w-10 text-blue-600" />
-                <h2 className="text-xl font-semibold mb-2">
-                  ThoughtExchange Survey
-                </h2>
-                <p className="mb-4">
-                  Please complete this survey ASAP to voice your thoughts and
-                  concern. Mention Cypress by name. This survey closes EOD
-                  Friday, June 13th.
-                </p>
-                <Button asChild>
-                  <a
-                    href="https://my.thoughtexchange.com/scroll/591428530/welcome"
-                    target="_blank"
-                  >
-                    Complete Survey
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
             <Card className="bg-blue-50">
               <CardContent className="p-6 text-center">
                 <Mail className="mx-auto mb-4 h-10 w-10 text-blue-600" />
@@ -284,7 +261,7 @@ function App() {
                   Share our message on social media, talk to neighbors, and
                   rally support.
                 </p>
-                <img src="/flyer.png" alt="SupportCypressFlyer"></img>
+                <img src="/delay_vote.png" alt="SupportCypressFlyer"></img>
               </CardContent>
             </Card>
 
@@ -324,22 +301,15 @@ function App() {
                     <p>
                       <strong>LISD Board Meeting</strong>
                     </p>
-                    <p>Thursday, June 19th</p>
+                    <p>Thursday, July 17th</p>
                     <p>6:15pm (Doors open at 5:30pm)</p>
                     <p>CPMS Library</p>
                     <p>
-                      <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 underline hover:text-blue-500"
-                      >
-                        Sign up to speak (closes 12pm 6/19)
-                      </a>
+                      <i>Sign-up link to speak will be posted once available</i>
                     </p>
                     <p>
                       <a
-                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=687821"
+                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=695900"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-700 underline hover:text-blue-500"
