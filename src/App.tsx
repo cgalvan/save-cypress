@@ -140,8 +140,11 @@ function App() {
   useEffect(() => {
     const checkTime = () => {
       const now = new Date();
-      const meetingStart = new Date("2025-06-05T18:10:00-05:00"); // 6/5, 6:10pm CST
-      const meetingEnd = new Date("2025-06-06T02:00:00-05:00"); // 6/6, 2:00am CST
+
+      // Update this for any future board meetings
+      const meetingStart = new Date("2025-06-19T18:10:00-05:00"); // 6/19, 6:10pm CST
+      const meetingEnd = new Date("2025-06-20T02:00:00-05:00"); // 6/20, 2:00am CST
+
       setShowBanner(now >= meetingStart && now <= meetingEnd);
     };
 
@@ -281,6 +284,7 @@ function App() {
                   Share our message on social media, talk to neighbors, and
                   rally support.
                 </p>
+                <img src="/flyer.png" alt="SupportCypressFlyer"></img>
               </CardContent>
             </Card>
 
@@ -324,7 +328,24 @@ function App() {
                     <p>6:15pm (Doors open at 5:30pm)</p>
                     <p>CPMS Library</p>
                     <p>
-                      <i>Sign-up link to speak will be posted once available</i>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 underline hover:text-blue-500"
+                      >
+                        Sign up to speak (closes 12pm 6/19)
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=687821"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 underline hover:text-blue-500"
+                      >
+                        Agenda
+                      </a>
                     </p>
                   </div>
                 </div>
