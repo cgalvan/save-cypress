@@ -8,6 +8,7 @@ import {
   Files,
   //Lightbulb,
   Mail,
+  Newspaper,
   Users,
   Megaphone,
 } from "lucide-react";
@@ -186,6 +187,31 @@ function App() {
           <section className="grid md:grid-cols-3 gap-6">
             <Card className="bg-blue-50">
               <CardContent className="p-6 text-center">
+                <Newspaper className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+                <h2 className="text-xl font-semibold mb-2">The 4th Pathway</h2>
+                <p className="mb-4">
+                  The goal of these newsletters is to express concerns supported
+                  by evidence and data, so that we can best partner with
+                  District leaders to create the best future for Leander ISD.
+                </p>
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://drive.google.com/drive/folders/1ybGbTxuJOtqLvWWyVMsb7fqI0egxEI2A?usp=drive_link"
+                    target="_blank"
+                    className="text-blue-700 hover:text-blue-500 flex items-center"
+                  >
+                    <img
+                      src="/icons/google_drive_icon.svg"
+                      alt="4thPathwayNewsletters"
+                      className="h-10 w-10 mr-5"
+                    />
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-blue-50">
+              <CardContent className="p-6 text-center">
                 <Mail className="mx-auto mb-4 h-10 w-10 text-blue-600" />
                 <h2 className="text-xl font-semibold mb-2">
                   Email the School Board
@@ -269,6 +295,32 @@ function App() {
               <CardContent className="p-6 text-center">
                 <Files className="mx-auto mb-4 h-10 w-10 text-blue-600" />
                 <h2 className="text-xl font-semibold mb-2">
+                  Supporting Documentation
+                </h2>
+                <p className="mb-4">
+                  External documents cited in "The 4th Pathway" newsletter
+                  series.
+                </p>
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://drive.google.com/drive/folders/11m2kGxcHH19G9HApYqMqvYHnp7h4iYZi?usp=drive_link"
+                    target="_blank"
+                    className="text-blue-700 hover:text-blue-500 flex items-center"
+                  >
+                    <img
+                      src="/icons/google_drive_icon.svg"
+                      alt="4thPathwayNewsletters"
+                      className="h-10 w-10 mr-5"
+                    />
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-blue-50">
+              <CardContent className="p-6 text-center">
+                <Files className="mx-auto mb-4 h-10 w-10 text-blue-600" />
+                <h2 className="text-xl font-semibold mb-2">
                   District Proposal
                 </h2>
                 <p className="mb-4">
@@ -299,24 +351,27 @@ function App() {
                 <div className="pl-4 border-l-4 border-blue-400 ml-4 text-gray-800 space-y-5">
                   <div>
                     <p>
+                      <strong>Save Cypress Community Meeting</strong>
+                    </p>
+                    <p>Wednesday, July 23rd</p>
+                    <p>6:00pm</p>
+                    <p>Cypress Cafeteria</p>
+                  </div>
+                  <div>
+                    <p>
                       <strong>LISD Board Meeting</strong>
                     </p>
-                    <p>Thursday, July 17th</p>
+                    <p>Thursday, July 31st</p>
                     <p>6:15pm (Doors open at 5:30pm)</p>
                     <p>CPMS Library</p>
+                  </div>
+                  <div>
                     <p>
-                      <i>Sign-up link to speak will be posted once available</i>
+                      <strong>LISD Board Meeting</strong>
                     </p>
-                    <p>
-                      <a
-                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=695900"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 underline hover:text-blue-500"
-                      >
-                        Agenda
-                      </a>
-                    </p>
+                    <p>Thursday, August 21st</p>
+                    <p>6:15pm (Doors open at 5:30pm)</p>
+                    <p>CPMS Library</p>
                   </div>
                 </div>
               </CardContent>
