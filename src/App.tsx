@@ -142,8 +142,8 @@ function App() {
       const now = new Date();
 
       // Update this for any future board meetings
-      const meetingStart = new Date("2025-07-17T18:10:00-05:00"); // 7/17, 6:10pm CST
-      const meetingEnd = new Date("2025-07-18T02:00:00-05:00"); // 7/18, 2:00am CST
+      const meetingStart = new Date("2025-08-21T18:10:00-05:00"); // 8/21, 6:10pm CST
+      const meetingEnd = new Date("2025-08-22T02:00:00-05:00"); // 8/22, 2:00am CST
 
       setShowBanner(now >= meetingStart && now <= meetingEnd);
     };
@@ -351,26 +351,46 @@ function App() {
                 <div className="pl-4 border-l-4 border-blue-400 ml-4 text-gray-800 space-y-5">
                   <div>
                     <p>
-                      <strong>Save Cypress Community Meeting</strong>
-                    </p>
-                    <p>Wednesday, July 23rd</p>
-                    <p>6:00pm</p>
-                    <p>Cypress Cafeteria</p>
-                  </div>
-                  <div>
-                    <p>
-                      <strong>LISD Board Meeting</strong>
-                    </p>
-                    <p>Thursday, July 31st</p>
-                    <p>6:15pm (Doors open at 5:30pm)</p>
-                    <p>CPMS Library</p>
-                  </div>
-                  <div>
-                    <p>
                       <strong>LISD Board Meeting</strong>
                     </p>
                     <p>Thursday, August 21st</p>
                     <p>6:15pm (Doors open at 5:30pm)</p>
+                    <p>CPMS Library</p>
+                    <p>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 underline hover:text-blue-500"
+                      >
+                        Sign up to speak (closes 12pm 8/21)
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=700047"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 underline hover:text-blue-500"
+                      >
+                        Agenda
+                      </a>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      <strong>
+                        <a
+                          href="https://news.leanderisd.org/announcing-dates-for-community-conversations-exploring-solutions-for-low-enrolled-schools/"
+                          target="_blank"
+                          className="text-blue-700 hover:text-blue-500"
+                        >
+                          Community Conversation
+                        </a>
+                      </strong>
+                    </p>
+                    <p>Monday, August 25th</p>
+                    <p>6 - 7:30pm</p>
                     <p>CPMS Library</p>
                   </div>
                 </div>
