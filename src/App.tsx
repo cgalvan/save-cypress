@@ -16,24 +16,17 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 const emailAddresses: string[] = [
-  "bruce.gearing@leanderisd.org",
   "kristen.alex@leanderisd.org",
+  "anna.smith@leanderisd.org",
   "sade.fashokun@leanderisd.org",
   "nekosi.nelson@leanderisd.org",
   "trish.bode@leanderisd.org",
   "paul.gauthier@leanderisd.org",
   "gloria.dholakia@leanderisd.org",
-  "christine.mauer@leanderisd.org",
   "francesca.romans@leanderisd.org",
-  "anna.smith@leanderisd.org",
-  "governance.team@leanderisd.org",
-  "sarah.grissom@leanderisd.org",
-  "shawn.swisher@leanderisd.org",
-  "crestina.hardie@leanderisd.org",
-  "pete.pape@leanderisd.org",
-  "angela.hodges@leanderisd.org",
 ];
 
+/*
 const emailSubjects: string[] = [
   "Keep Cypress Open: Preserve Our Community's Future",
   "Defend Cypress: A School Worth Saving",
@@ -56,28 +49,39 @@ const getRandomSubject = (): string => {
   const index = Math.floor(Math.random() * emailSubjects.length);
   return emailSubjects[index];
 };
+*/
+const emailTemplate = `Dear Members of the LISD Board of Trustees,
 
-const emailTemplate = `Dear Members of the LISD Board,
+I am writing to express deep concern and disappointment with the direction and outcome of last night's community conversation between Cypress and Naumann Elementary Schools. Parents and community members came prepared in good faith—ready to listen, collaborate, and engage in solutions. The district, however, showed up with empty hands, no answers, and no willingness to listen. That is not dialogue—it is dismissal. Trust is broken. If leadership cannot meet its commitments to transparency and accountability, then it is time for a change at the top.
 
-I am writing to express deep concern over the proposed closure of Cypress Elementary School due to low enrollment numbers. While we understand the challenges of maintaining operations amid changing demographics and budgetary pressures, I urge you to consider the broader value and unique strengths our school brings to students, families, and the community as a whole. Please keep Cypress open!
+Key Concerns:
 
-Cypress is far more than an enrollment statistic. It is a vibrant and supportive community where students are known, valued, and nurtured. Families choose our school not just for convenience, but for the connection they feel with teachers, staff, and one another. This sense of belonging is irreplaceable and has a lasting impact on student well-being and success. Our Cypress community is a lifeline to our students, teachers, and families.
+No Answers, No Data: Despite repeated commitments, the superintendent and COO arrived with nothing new—no follow-up data, no themes from ThoughtExchange feedback, and no clarity on how “needs” are defined or measured.
 
-Beyond community, our school has demonstrated strong programmatic success. Our news broadcasting program (Cheetah News), annual spring performing arts programs, nationally ranked Destination Imagination team, Spanish volunteer program, beloved PTA community programs such as Multicultural Night, Fall Fest, and STEM night have not only enriched students’ academic lives but have also earned recognition and positive outcomes. These programs are thriving because they are supported by a dedicated team of educators and supportive families who believe in the mission of empowering every child to reach their potential.
+Community Voice Ignored: Parents have spent countless hours analyzing data and proposing solutions. That work was not acknowledged nor reflected in district planning.
 
-Most importantly, we believe in the potential of our school to grow and adapt. We are already seeing early signs of renewed interest from prospective families from surrounding schools who toured our campus in the spring specifically because of our strong reputation. The foundation is in place—what we need now is the time and support to build on that momentum.
+Broken Promises & Misused Data: Transparency and collaboration commitments have not been honored. Data is presented selectively, with shifting definitions and unexplained methodology.
 
-Closing our school would not only displace students and families but would also dismantle a strong educational environment that cannot be easily replicated. We respectfully ask that the Board keep Cypress OPEN and work with us to explore creative solutions, partnerships, or a phased improvement plan that allows us to continue serving the community.
+Decision Already Made: The meeting felt like a performance, not a conversation—reinforcing a predetermined outcome rather than co-creating solutions.
 
-Sincerely,
+Growing Distrust: Parents left angrier and more frustrated than ever. Trust in the superintendent's leadership is gone. Continuing in this manner will only deepen division and erode public confidence.
 
-[YOUR NAME HERE]
+Lack of Research: When asked about models or lessons from other districts, leadership admitted little to no research had been done. This is irresponsible and unacceptable.
+
+Disrespectful Tone: Parents and staff were spoken to as if they lacked the ability to think critically. Such dismissive treatment of thoughtful, informed stakeholders is offensive and damaging.
+
+Our community showed up to work in good faith toward solutions. The district did not. If LISD leadership continues to operate without transparency, accountability, or respect for its stakeholders, I urge the Board to step in and consider whether a change in leadership is necessary.
+
+Respectfully,
+[Your Full Name]
+[Your Connection to the Schools—Parent, Staff, Community Member, etc.]
+[Optional: Phone Number]
 `;
 const mailToLink = `mailto:${emailAddresses.join(
   ","
-)}?subject=${encodeURIComponent(getRandomSubject())}&body=${encodeURIComponent(
-  emailTemplate
-)}`;
+)}?subject=${encodeURIComponent(
+  "Deep Concerns: Cypress-Naumann Meeting"
+)}&body=${encodeURIComponent(emailTemplate)}`;
 
 // Images from board meetings, rallies, etc...
 const photos = [
@@ -118,21 +122,50 @@ const photos = [
   "/images/IMG_1254.jpg",
   "/images/IMG_1255.jpg",
   "/images/IMG_9512.jpg",
+  "/images/IMG_3085.jpg",
+  "/images/IMG_3086.jpg",
+  "/images/IMG_3087.jpg",
+  "/images/IMG_3089.jpg",
+  "/images/IMG_3090.jpg",
+  "/images/IMG_3091.jpg",
+  "/images/IMG_3092.jpg",
+  "/images/IMG_3093.jpg",
+  "/images/IMG_3094.jpg",
+  "/images/IMG_3096.jpg",
+  "/images/IMG_3097.jpg",
+  "/images/IMG_3100.JPEG",
+  "/images/IMG_3103.jpg",
+  "/images/IMG_3106.jpg",
+  "/images/IMG_3110.jpg",
 ];
 
 function App() {
-  const [sliderRef] = useKeenSlider({
-    loop: true,
-    slides: {
-      perView: 1,
-      spacing: 10,
+  // Handle lazy loading of our images
+  const [imageLoaded, setImageLoaded] = useState<boolean[]>([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    animationEnded(s) {
+      setCurrentSlide(s.track.details.rel);
     },
     created: (slider) => {
       setInterval(() => {
         slider.next();
       }, 3000);
     },
+    loop: true,
+    initial: 0,
   });
+
+  useEffect(() => {
+    const new_loaded = [...imageLoaded];
+    new_loaded[currentSlide] = true;
+    setImageLoaded(new_loaded);
+  }, [currentSlide]);
+
+  // A 1x1 transparent pixel for lazy loading, since we will get console errors if we provide an empty/null src attribute
+  const invisiblePixel =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
 
   // Show a top banner whenever a board meeting stream is live
   const [showBanner, setShowBanner] = useState(false);
@@ -168,6 +201,21 @@ function App() {
             </a>
           </div>
         )}
+
+        {
+          <div className="bg-red-600 text-white text-center py-2 px-4">
+            🚨 Sign-up&nbsp;
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+              target="_blank"
+              className="underline font-semibold hover:text-gray-100"
+            >
+              here
+            </a>{" "}
+            to speak at the board meeting by today at 12pm! 🚨
+          </div>
+        }
+
         <div className="p-6 md:p-12">
           <header className="text-center mb-10">
             <h1 className="text-4xl font-bold text-blue-700 mb-4">
@@ -218,7 +266,8 @@ function App() {
                 </h2>
                 <p className="mb-4">
                   Use our prepared letter with any added personal touches or
-                  stories (and please replace with your name at the bottom).
+                  stories (and please replace with your name and other details
+                  at the bottom).
                 </p>
                 <Button asChild>
                   <a href={mailToLink}>Send an Email</a>
@@ -353,22 +402,12 @@ function App() {
                     <p>
                       <strong>LISD Board Meeting</strong>
                     </p>
-                    <p>Thursday, August 21st</p>
+                    <p>Thursday, September 4th</p>
                     <p>6:15pm (Doors open at 5:30pm)</p>
-                    <p>CPMS Library</p>
+                    <p>Cedar Park Middle School</p>
                     <p>
                       <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 underline hover:text-blue-500"
-                      >
-                        Sign up to speak (closes 12pm 8/21)
-                      </a>
-                    </p>
-                    <p>
-                      <a
-                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=700047"
+                        href="https://meetings.boardbook.org/Public/Agenda/795?meeting=700721"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-700 underline hover:text-blue-500"
@@ -376,22 +415,50 @@ function App() {
                         Agenda
                       </a>
                     </p>
+                    <p>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSfNfmfysPKJtuikl7D3ULCqZO0ZwlkdPeMl6wxRjcIVmcicGQ/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 underline hover:text-blue-500"
+                      >
+                        Sign up to speak (closes 12pm 9/4)
+                      </a>
+                    </p>
                   </div>
                   <div>
                     <p>
-                      <strong>
-                        <a
-                          href="https://news.leanderisd.org/announcing-dates-for-community-conversations-exploring-solutions-for-low-enrolled-schools/"
-                          target="_blank"
-                          className="text-blue-700 hover:text-blue-500"
-                        >
-                          Community Conversation
-                        </a>
-                      </strong>
+                      <strong>LISD Board Workshop</strong>
+                      <strong className="text-red-700">**NEW**</strong>
                     </p>
-                    <p>Monday, August 25th</p>
-                    <p>6 - 7:30pm</p>
-                    <p>CPMS Library</p>
+                    <p>Tuesday, September 9th</p>
+                    <p>6:15pm (Doors open at 5:30pm)</p>
+                    <p>Cedar Park Middle School</p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <strong>LISD Board Meeting</strong>
+                    </p>
+                    <p>Thursday, September 18th</p>
+                    <p>6:15pm (Doors open at 5:30pm)</p>
+                    <p>Cedar Park Middle School</p>
+                  </div>
+                  <div>
+                    <p>
+                      <strong>LISD Board Meeting</strong>
+                    </p>
+                    <p>Thursday, October 9th</p>
+                    <p>6:15pm (Doors open at 5:30pm)</p>
+                    <p>Cedar Park Middle School</p>
+                    <p>
+                      🚨
+                      <i>
+                        Board Final Decision regarding Low-Enrollment Elementary
+                        Schools
+                      </i>
+                      🚨
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -406,9 +473,9 @@ function App() {
                 </h2>
                 <div ref={sliderRef} className="keen-slider">
                   {photos.map((src, index) => (
-                    <div key={index} className="keen-slider__slide">
+                    <div key={index} className="keen-slider__slide lazy__slide">
                       <img
-                        src={src}
+                        src={imageLoaded[index] ? src : invisiblePixel}
                         alt={`Gallery image ${index + 1}`}
                         className="rounded-lg shadow-md mx-auto"
                       />
